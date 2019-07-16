@@ -18,3 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Route Grup for Admin
+Route::group(['as'=>'admin.','prefex'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function()
+{
+    Route::get('admin/dashboard','DashboardController@index')->name('dashboard');
+});
+
+//Route Grup for Author
+Route::group(['as'=>'author.','prefex'=>'author','namespace'=>'Author','middleware'=>['auth','author']], function()
+{
+    Route::get('author/dashboard','DashboardController@index')->name('dashboard');
+});
