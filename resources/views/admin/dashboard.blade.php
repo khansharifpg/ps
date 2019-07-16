@@ -6,6 +6,7 @@
 
 @endpush
 
+
 @section('content')
     <div class="container-fluid">
         <div class="block-header">
@@ -317,7 +318,6 @@
         </div>
     </div>
 @endsection
-
 
 @push('js')
 

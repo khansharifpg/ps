@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -32,13 +34,14 @@
     <link href="{{ asset('assets/backend/css/style.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-
     <link href="{{ asset('assets/backend/css/themes/all-themes.css') }}" rel="stylesheet" />
 
-    @stack('css')
-</head>
 
-<body class="theme-blue">
+
+    @stack('css')
+
+</head>
+<body class="theme-red">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
@@ -70,11 +73,9 @@
     </div>
 </div>
 <!-- #END# Search Bar -->
-
 <!-- Top Bar -->
 @include('layouts.backend.partial.topbar')
 <!-- #Top Bar -->
-
 <section>
     <!-- Left Sidebar -->
 @include('layouts.backend.partial.sidebar')
@@ -83,7 +84,7 @@
 </section>
 
 <section class="content">
-  @yield('content')
+   @yield('content')
 </section>
 
 <!-- Jquery Core Js -->
@@ -109,6 +110,9 @@
 
 <!-- Demo Js -->
 <script src="{{ asset('assets/backend/js/demo.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 @stack('js')
+
 </body>
 </html>
