@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Auth::routes();
+
 
 
 //Route Grup for Admin
