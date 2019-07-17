@@ -23,6 +23,8 @@ Auth::routes();
 Route::group(['as'=>'admin.','prefex'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function()
 {
     Route::get('admin/dashboard','DashboardController@index')->name('dashboard');
+
+    Route::resource('admin/tag','TagController');
 });
 
 //Route Grup for Author
